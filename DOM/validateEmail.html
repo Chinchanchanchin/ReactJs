@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function IsValidateEmail (email) {
+        let regex = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+        return regex.test(email);
+    }
+    console.log('a@gmail.com ', IsValidateEmail('a@gmail.com'));
+    console.log('ab@yahoo.com ', IsValidateEmail('ab@yahoo.com'));
+    console.log('abc@hotmail.com ', IsValidateEmail('abc@hotmail.com'));
+
+    console.log('@gmail.com ', IsValidateEmail('@gmail.com'));
+    console.log('ab@gmail. ', IsValidateEmail('ab@gmail.'));
+    console.log('@#abc@gmail.com ', IsValidateEmail('@#abc@gmail.com'));
+</script>

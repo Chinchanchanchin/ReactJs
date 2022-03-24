@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function isValidateAccount(account) {
+        let regex = /^[_a-z0-9]{6,}$/;
+        return regex.test(account);
+    }
+    console.log("123abc_ " , isValidateAccount("123abc_") );
+    console.log("_abc123 " , isValidateAccount("_abc123") );
+    console.log("______ " , isValidateAccount("______") );
+    console.log("123456 " , isValidateAccount("123456") );
+    console.log("abcdefg " , isValidateAccount("abcdefg") );
+
+    console.log(".@ " , isValidateAccount(".@") );
+    console.log("12345 " , isValidateAccount("12345") );
+    console.log("1234_ " , isValidateAccount("1234_") );
+    console.log("abcde " , isValidateAccount("abcde") );
+</script>

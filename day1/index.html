@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Shape {
+        constructor(color, isFilled = null) {
+            this.color = color;
+            this.isFilled = isFilled == null ? false : true;
+        }
+
+        toString() {
+            return "A shape with color of " + this.color + " and " + (this.isFilled ? "filled" : "not filled");
+        }
+    }
+    class Circle extends Shape {
+        constructor(color, isFilled, radius) {
+            super(color, isFilled); // ke thua tu phuong thuc cha
+            this.radius = radius;
+        }
+    }
+
+    class Rectangle extends Shape {
+        constructor(color, isFilled, width,length) {
+            super(color, isFilled);
+            this.width = width;
+            this.length = length;
+        }
+        getArea() {
+            return "dien tich bang " + this.width * this.length;
+        }
+        getPerimeter() {
+            return "chu vi bang " + (this.width + this.length) * 2;
+        }
+        toString() {
+            "A Rectangle with " + this.width + "and" + this.length +  "which is a subclass of " + super.toString();
+        }
+    }
+</script>
