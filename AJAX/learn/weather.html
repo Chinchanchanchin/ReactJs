@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="weather.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="weather">
+        <div class="tittle">Dự Báo Thời Tiết</div>
+        <input type="text" placeholder="search..." id="searchIp">
+        <button id="searchBtn">Tìm kiếm</button>
+        <div id="city" class="city"></div>
+        <div id="stateWeather" class="stateWeather"></div>
+        <div id="temp" class="temp"></div>
+    </div>
+</body>
+</html>
+<script>
+    let api_key = "80c5abe55806eb0001ea5d36d7143c62";
+    let searchInput = document.getElementById("searchIp");
+    let searchButton = document.getElementById("searchBtn");
+    let cityName = document.getElementById("city");
+    let temputure = document.getElementById("temp");
+    let state = document.getElementById("stateWeather");
+    searchButton.addEventListener("click", (e) => {
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchInput.value + '&appid=' + api_key +'&units=metric&lang=vi')
+        .then(async res => {
+            const data = await res.json();
+            console.log(data);
+            cityName.innerHTML = data.name;
+            state.innerHTML = data.weather[0].description;
+            temputure.innerHTML = Math.round(data.main.temp) + "°C ";
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    })
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Info {
+        constructor(name, mota) {
+            this.name = name;
+            this.mota = mota;
+            
+        }
+        static hamtinh (num){
+                num = 1;
+                return num*=3;
+            }
+        }
+     class hinhHoc extends Info {
+        constructor(mota, chieudai){
+        super(mota);
+        this.chieudai = chieudai;
+     }
+     static ham (number, chieudai) {
+        return chieudai * number;
+     } 
+    }
+    let a = new hinhHoc ("vuong", 2);
+    console.log(a);
+    console.log( hinhHoc.ham(2, 2))
+   
+
+</script>
