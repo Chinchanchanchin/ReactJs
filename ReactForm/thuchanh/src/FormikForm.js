@@ -17,8 +17,7 @@ import {Formik} from "formik";
         if(!form.email) {
             errors.email = "Required";
         } else if (!REGEX.email.test(form.email)) {
-            errors.email ="Invalid email address";
-            console.log("code");
+            errors.email = "Invalid email address";
         }
         if(!form.password) {
             errors.password = "Required";
